@@ -1,0 +1,16 @@
+local Games = {
+    [6152116144] = "https://api.luarmor.net/files/v3/loaders/bad5a34468414c00964f5bd2e65dd87c.lua", -- PJS Map 1
+    [11468159863] = "https://api.luarmor.net/files/v3/loaders/bad5a34468414c00964f5bd2e65dd87c.lua", -- PJS Map 2
+    [11468075017] = "https://api.luarmor.net/files/v3/loaders/bad5a34468414c00964f5bd2e65dd87c.lua", -- PSJ Dungeon
+    [9366093452] = "https://api.luarmor.net/files/v3/loaders/bad5a34468414c00964f5bd2e65dd87c.lua", -- PSJ Pvp
+}
+
+if Games[game.PlaceId] then
+    loadstring(game:HttpGet(Games[game.PlaceId]))()
+else
+    StarterGui:SetCore("SendNotification", {
+        Title = "Yeat Hub",
+        Text = "Game Not Supported.",
+        Duration = 10
+    })
+end
