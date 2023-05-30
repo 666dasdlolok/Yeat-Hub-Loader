@@ -8,6 +8,8 @@ local Games = {
 if Games[game.PlaceId] then
     loadstring(game:HttpGet(Games[game.PlaceId]))()
 else
+    local StarterGui = game:GetService("StarterGui")
+
     StarterGui:SetCore("SendNotification", {
         Title = "Yeat Hub",
         Text = "Game Not Supported.",
