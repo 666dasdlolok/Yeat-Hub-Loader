@@ -19,7 +19,7 @@ local data = {
     ["embeds"] = {
         {
             ["title"] = "**" .. player.Name .. " Executed Verny Hub V2" .. "**",
-            ["description"] = "Username: " .. player.Name .. " with **" .. webhookcheck .. "**" .. " Game Name: " .. nameOfGame.Name,
+            ["description"] = "Username: " .. player.Name .. " with **" .. identifyexecutor() .. "**" .. " Game Name: " .. nameOfGame.Name,
             ["type"] = "rich",
             ["color"] = tonumber(0x7269da),
             ["image"] = {
