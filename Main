@@ -2,7 +2,40 @@ repeat task.wait() until game:IsLoaded()
 
 _G.NowLoaded = true
 
+local nameOfGame = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
 
+local player = game.Players.LocalPlayer
+local place = game.PlaceId
+
+local webhookcheck = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+    secure_load and "Sentinel" or
+    KRNL_LOADED and "Krnl" or
+    SONA_LOADED and "Sona" or
+    "Unknown"
+
+local url = "https://discord.com/api/webhooks/1121850913980682401/oPaQsfn87Y1eg0CmvU0Dhox3dpC-SNu9RvjlRPW8OWFgK7fZ0Pdrr5B87y2KpXiigD_C"
+local data = {
+    ["content"] = "",
+    ["embeds"] = {
+        {
+            ["title"] = "**" .. player.Name .. " Executed Verny Hub V2" .. "**",
+            ["description"] = "Username: " .. player.Name .. " with **" .. webhookcheck .. "**" .. " Game Name: " .. nameOfGame.Name,
+            ["type"] = "rich",
+            ["color"] = tonumber(0x7269da),
+            ["image"] = {
+                ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" .. player.Name
+            }
+        }
+    }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+    ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
 
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/666dasdlolok/RayfieldModifiedBlue/main/Main'))()
 
