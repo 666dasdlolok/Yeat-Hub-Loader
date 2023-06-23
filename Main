@@ -1,3 +1,50 @@
+repeat task.wait() until game:IsLoaded()
+
+_G.NowLoaded = true
+
+
+
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/666dasdlolok/RayfieldModifiedBlue/main/Main'))()
+
+local configFolder = _G.ConfigFolder or ""
+if not isfolder("Yeat Hub"..configFolder) then
+    makefolder("Yeat Hub"..configFolder)
+end
+
+local Window = Rayfield:CreateWindow({
+	Name = "Yeat Hub | Anime Warriors Simulator 2 | Verny#1111",
+	LoadingTitle = "Yeat Hub",
+	LoadingSubtitle = "by Verny#1111",
+	ConfigurationSaving = {
+		Enabled = false,
+		FolderName = "Yeat Hub"..configFolder, -- Create a custom folder for your hub/game
+		FileName = "AWS222"..game.Players.LocalPlayer.Name
+	},
+    Discord = {
+        Enabled = true,
+        Invite = "bQmwdfS24B", -- The Discord invite code, do not include discord.gg/
+        RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+	KeySystem = true, -- Set this to true to use our key system
+	KeySettings = {
+		Title = "Yeat Hub",
+		Subtitle = "Key System",
+		Note = "Join the discord (discord.gg/bQmwdfS24B)",
+		FileName = "YeatFreeKey",
+		SaveKey = true,
+		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+		Key = "FinallyReleasedAnotherScriptGG"
+	}
+})
+
+local Tab = Window:CreateTab("Key", 4483362458) -- Title, Image
+
+local Section = Tab:CreateSection("Script",true) -- The 2nd argument is to tell if its only a Title and doesnt contain elements
+
+local Label = Tab:CreateLabel("Script Is Loading",SectionParent)
+
+task.wait(2)
+
 local Games = {
     [8425128940] = "https://api.luarmor.net/files/v3/loaders/68b36ff6d94f20836b8f05b1f00820d2.lua", -- Anime Warriors Simulator 2
     [6777872443] = "https://api.luarmor.net/files/v3/loaders/82e352ad96b3aa3c2b4ac79d98301766.lua", -- Pixel Piece
